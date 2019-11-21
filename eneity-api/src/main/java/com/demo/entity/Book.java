@@ -11,13 +11,11 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-public class Student implements Serializable {
-    private int id;
-    private String name;
-    private String phone;
-    private int bookId;
-
-    public Student(String name)
+public class Book implements Serializable {
+    int id;
+    String name;
+    String statue;
+    public Book(String name)
     {
         this.name=name;
     }

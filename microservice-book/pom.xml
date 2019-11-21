@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>microsevice-book-provider</module>
+        <module>microservice-book-consumer</module>
     </modules>
 
 

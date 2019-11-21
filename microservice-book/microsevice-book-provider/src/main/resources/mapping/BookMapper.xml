@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.demo.dao.BookDao">
+    <update id="borrowBook">
+        update Student set bookId=#{bookId} where id=#{studentID}
+        update Book set statue='out' where id=#{bookId}
+    </update>
+    <update id="returnBook">
+        update Student set bookId={null} where id=#{studentID}
+        update Book set statue='in' where id=#{bookId}
+    </update>
+
+    <insert id="addBook" parameterType="Book">
+        INSERT into Book(id,name,statue) values (#{id},#{name},#{statue})
+    </insert>
+    <delete id="deleteBookById">
+        delete from Book where id=#{id}
+    </delete>
+    <update id="updateBook" parameterType="Book">
+        update Book set id=#{id},name= #{name},statue=#{statue} where id=#{id}
+    </update>
+    <select id="findBookById" resultType="Book">
+        select * from Book where id=#{id}
+    </select>
+    <select id="findAll" resultType="Book">
+        select * from Book
+    </select>
+
+</mapper>
